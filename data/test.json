@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "laptop",
+    "number": 10
+  },
+  {
+    "id": 2,
+    "name": "laptop",
+    "number": 20
+  },
+  {
+    "id": 3,
+    "name": "laptop",
+    "number": 30
+  },
+  {
+    "id": 4,
+    "name": "laptop",
+    "number": 40
+  },
+  {
+    "id": 5,
+    "name": "laptop",
+    "number": 50
+  },
+  {
+    "id": 6,
+    "name": "laptop",
+    "number": 60
+  }
+]
