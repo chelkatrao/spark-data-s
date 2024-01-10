@@ -18,6 +18,9 @@ public class SparkInvocationHandlerImpl implements SparkInvocationHandler {
     private DataExtractor dataExtractor;
     private Map<Method, List<Tuple2<SparkTransformation, List<String>>>> transformationChain;
     private Map<Method, Finalizer> finilazerMap;
+    private FinalizerPostProcessor postProcessor;
+
+
     private ConfigurableApplicationContext context;
 
     @Override

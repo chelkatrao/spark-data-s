@@ -18,6 +18,10 @@ public class SparkDataApplicationContextInitializer implements ApplicationContex
         AnnotationConfigApplicationContext tempContext = new AnnotationConfigApplicationContext(InternalConfig.class);
         SparkInvocationHandlerFactory factory = tempContext.getBean(SparkInvocationHandlerFactory.class);
         factory.setRealContext(context);
+
+        DataExtractorResolver dataExtractorResolver = tempContext.getBean(DataExtractorResolver.class);
+        context.getBeanFactory().registerSingleton("extractorResolverForSpark", dataExtractorResolver);
+
         tempContext.close();
 
         registerSparkBeans(context);

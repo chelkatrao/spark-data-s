@@ -1,2 +1,2 @@
-org.springframework.context.ApplicationContextInitializer=\
-com.chelkatrao.starter.unsafe.SparkDataApplicationContextInitializer
+org.springframework.context.ApplicationContextInitializer = com.chelkatrao.starter.unsafe.SparkDataApplicationContextInitializer
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = com.chelkatrao.starter.StarterConf
