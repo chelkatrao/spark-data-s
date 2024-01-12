@@ -66,6 +66,7 @@ public class SparkInvocationHandlerFactory {
                 .finilazerMap(methodToFinalizer)
                 .pathToData(pathToData)
                 .transformationChain(transformationChain)
+                .postProcessor(new LazyCollectionSupportFinalizerPostProcessor(realContext))
                 .context(realContext)
                 .build();
 

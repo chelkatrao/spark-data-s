@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Source("data/order.csv")
+@Source("data/orders.csv")
 public class Order {
     private String name;
     private String desc;

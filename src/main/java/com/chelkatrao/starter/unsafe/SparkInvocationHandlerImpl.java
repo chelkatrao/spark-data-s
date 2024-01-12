@@ -37,7 +37,8 @@ public class SparkInvocationHandlerImpl implements SparkInvocationHandler {
 
         Finalizer finalizer = finilazerMap.get(method);
 
-        return finalizer.doAction(dataset, modelClass, orderedBag);
+        Object o = finalizer.doAction(dataset, modelClass, orderedBag);
+        return postProcessor.postFinalize(o);
     }
 
 }

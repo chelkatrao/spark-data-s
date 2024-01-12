@@ -8,13 +8,16 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.functions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class FirstLevelCacheService {
 
-    private Map<Class<?>, Dataset<Row>> model2Dataset;
+    private final Map<Class<?>, Dataset<Row>> model2Dataset = new HashMap<>();
 
     @Autowired
     private DataExtractorResolver resolver;

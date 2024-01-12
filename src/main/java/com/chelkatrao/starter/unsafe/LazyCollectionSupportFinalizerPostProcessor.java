@@ -12,8 +12,11 @@ import java.util.Collection;
 import java.util.List;
 
 public class LazyCollectionSupportFinalizerPostProcessor implements FinalizerPostProcessor {
+    private final ConfigurableApplicationContext context;
 
-    private ConfigurableApplicationContext context;
+    public LazyCollectionSupportFinalizerPostProcessor(ConfigurableApplicationContext realContext) {
+        this.context = realContext;
+    }
 
     @SneakyThrows
     @Override
@@ -38,13 +41,15 @@ public class LazyCollectionSupportFinalizerPostProcessor implements FinalizerPos
                         sparkList.setModelClass(embeddedModel);
                         String pathToData = embeddedModel.getAnnotation(Source.class).value();
                         sparkList.setPathToSource(pathToData);
+
+                        field.setAccessible(true);
+                        field.set(model, sparkList);
                     }
                 }
             }
         }
-        return null;
+         return retVal;
     }
-
     private static Class<?> getEmbeddedModel(Field field) {
         ParameterizedType genericType = (ParameterizedType) field.getGenericType();
         return  (Class<?>) genericType.getActualTypeArguments()[0];

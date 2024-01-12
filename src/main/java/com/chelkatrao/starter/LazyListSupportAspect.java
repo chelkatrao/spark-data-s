@@ -16,7 +16,7 @@ public class LazyListSupportAspect {
     @Autowired
     private ConfigurableApplicationContext context;
 
-    @Before("* execution(* com.epam.starter.LazySparkList.*()) && execution(* java.util.*.*(..))")
+    @Before("execution(* com.chelkatrao.starter.LazySparkList.*()) & execution(* java.util.*.*(..))")
     public void beforeEachMethodInvocationCheckAndFillContent(JoinPoint jp) {
         LazySparkList lazySparkList = (LazySparkList) jp.getTarget();
         if (!lazySparkList.initialized()) {

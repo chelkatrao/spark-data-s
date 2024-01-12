@@ -1,5 +1,5 @@
 name,desc,price,criminalId
-Jack,kidnap,100,1
-John,kill,200,2
-Bill,murder,150,2
+Jack,kidnap,100,2
+John,kill,200,3
+Bill,murder,150,4
 Sauron,prison,1500,4
